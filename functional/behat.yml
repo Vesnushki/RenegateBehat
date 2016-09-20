@@ -15,9 +15,10 @@ default:
     Irs\BehatPopupExtension\Extension: ~
     Behat\MinkExtension\Extension:
       base_url: https://dev.rbgsystems.com/
-      selenium2: ~
+      selenium2:
+          wd_host: "http://127.0.0.1:4444/wd/hub"
       default_session: selenium2
-      browser_name: firefox
+      browser_name: chrome
       #selenium2:
       #        capabilities: { "browser": "firefox", "version": "45.0.2"}
   formatter:
