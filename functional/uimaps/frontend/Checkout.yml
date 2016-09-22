@@ -115,7 +115,7 @@ checkout:
                             gift_option_for_the_entire_order: //input[@id='allow_gift_messages_for_order']
                             gift_option_for_individual_items: //input[@id='allow_gift_messages_for_items']
                         radiobuttons:
-                            radio_button: //input[@id='s_method_flatrate']
+                            radio_button: //input[@id='s_method_flatrate_flatrate']
                             radio_button_for_login_user: //input[@id='s_method_flatrate_flatrate']
                             ship_method: //dt[text()='%shipService%']/following-sibling::*//input[@type='radio' and following-sibling::*[contains(text(),'%shipMethod%')]]
                             one_method_selected: //dt[text()='%shipService%']/following-sibling::*//input[@type='radio' and ../following-sibling::*[contains(text(),'%shipMethod%')]]
@@ -243,11 +243,12 @@ checkout_payment:
                             discount_code: //input[@id='discount-code']
                             gift_card_code: //input[@id='giftcard-code']
                             payment_email: //input[@id='customer-email']
-                            payment_password: ////input[@id='customer-password']
+                            payment_password: //input[@id='customer-password']
+                            credit_card_number: //input[@id='md_cybersource_cc_number']
                         dropdowns:
-                            card_type: //select[@id='%paymentId%_cc_type']
-                            expiration_month: //select[@id='%paymentId%_expiration']
-                            expiration_year: //select[@id='%paymentId%_expiration_yr']
+                            card_type: //select[@id='md_cybersource_cc_type']
+                            expiration_month: //select[@id='md_cybersource_expiration']
+                            expiration_year: //select[@id='md_cybersource_expiration_yr']
                         links:
                             back: //li[@id='opc-payment']//p[@class='back-link']/a[@href]
                         required: [card_type, card_number, expiration_month, expiration_year, card_verification_number, name_on_card]   

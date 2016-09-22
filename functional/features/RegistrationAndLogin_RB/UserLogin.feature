@@ -30,9 +30,10 @@ Feature: As a registered user I want to log in to the website
     Then I should see "kkatekoss@gmail.com"
       And I should see "My Dashboard"
     And I wait for 10 seconds
-    Then I click on "//a[contains(.,'User')]"
+    Then I click on "//a[contains(.,'Sign In')]"
+    And I wait for 10 seconds
     #Then I follow "user" in fieldset "frontend_header"
-    Then I click on "//a[contains(.,'Sign Out')]"
+    Then I click on "//div[@id='ui-id-1']//a[contains(.,'Sign Out')]"
       And I wait for 10 seconds
       And I should be on the "home"
     Then I am on "customer_login"

@@ -231,7 +231,7 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
         //current implementation is the fastest
         try {
             $this->getMink()->assertSession()->elementExists(
-                'xpath', "//div[@option-id='169']"
+                'xpath', "//div[@option-id='128']"
             )->click();
         } catch (\Behat\Mink\Exception\ElementNotFoundException $e) {
         }
@@ -239,7 +239,7 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
             //looks for available sizes
         try {
             $this->getMink()->assertSession()->elementExists(
-                'xpath', "//div[@option-id='1251']"
+                'xpath', "//div[@option-id='1566']"
             )->click();
         } catch (\Behat\Mink\Exception\ElementNotFoundException $e) {
         }
@@ -300,5 +300,26 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
         } else {
             $findName->click();
         }
+    }
+
+    /**
+     * @When /^(?:|I )fill PayPal login form$/
+     */
+    public function fillPayPalLoginForm()
+    {
+        $field_email = $this->getSession()->getPage()->find('xpath', '//input[@id="email"]');
+        $field_field = $this->getSession()->getPage()->find('xpath', '//input[@id="password"]');
+        $this->fillField($field_email, 'slipknot4@ua.fm');
+        $this->fillField($field_field, '12345678');
+    }
+
+    /**
+     * @Given /^I switch to the iframe$/
+     */
+    public function iSwitchToIframe()
+    {
+        $find_iframe = $this->getSession()->getPage()->find('css','#injectedUnifiedLogin iframe');
+        $iframeName = $find_iframe->getAttribute('name');
+        $this->getSession()->switchToIFrame($iframeName);
     }
 }

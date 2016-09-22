@@ -1,5 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite classname="behat.features" errors="0" failures="0" name="As a registered user I want to log in to the website" file="D:\RenegateBrand\functional\features\RegistrationAndLogin_RB\UserLogin.feature" tests="12" time="48.554112">
-    <testcase classname="As a registered user I want to log in to the website" name="User logout and login as another user (cache validation)" time="48.550112">
+<testsuite classname="behat.features" errors="0" failures="5" name="As a registered user I want to log in to the website" file="D:\RenegateBrand\functional\features\RegistrationAndLogin_RB\UserLogin.feature" tests="30" time="0.575017">
+    <testcase classname="As a registered user I want to log in to the website" name="User login  with correct data" time="0.315009">
+        <failure message="The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown" type="failed"><![CDATA[
+exception 'WebDriver\Exception\UnknownError' with message 'The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown' in D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\Exception.php:157
+Stack trace:
+#0 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\AbstractWebDriver.php(140): WebDriver\Exception::factory(13, 'The best matchi...')
+#1 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\WebDriver.php(76): WebDriver\AbstractWebDriver->curl('POST', '/session', Array, Array)
+#2 D:\RenegateBrand\functional\vendor\behat\mink-selenium2-driver\src\Behat\Mink\Driver\Selenium2Driver.php(257): WebDriver\WebDriver->session('firefor', Array)
+#3 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Session.php(62): Behat\Mink\Driver\Selenium2Driver->start()
+#4 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Mink.php(124): Behat\Mink\Session->start()
+#5 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(373): Behat\Mink\Mink->getSession()
+#6 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(785): FeatureContext->getSession()
+#7 [internal function]: FeatureContext->visit('customer_login')
+#8 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Definition\Annotation\Definition.php(155): call_user_func_array(Array, Array)
+#9 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(157): Behat\Behat\Definition\Annotation\Definition->run(Object(FeatureContext))
+#10 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(126): Behat\Behat\Tester\StepTester->executeStepDefinition(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Behat\Definition\Annotation\Given))
+#11 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(95): Behat\Behat\Tester\StepTester->executeStep(Object(Behat\Gherkin\Node\StepNode))
+#12 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\StepTester->visit(Object(Behat\Gherkin\Node\StepNode))
+#13 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(148): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\StepTester))
+#14 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(87): Behat\Behat\Tester\ScenarioTester->visitStep(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Gherkin\Node\ScenarioNode), Object(FeatureContext), Array, false)
+#15 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\ScenarioTester->visit(Object(Behat\Gherkin\Node\ScenarioNode))
+#16 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\FeatureTester.php(88): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\ScenarioTester))
+#17 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\FeatureTester->visit(Object(Behat\Gherkin\Node\FeatureNode))
+#18 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(150): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\FeatureTester))
+#19 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(128): Behat\Behat\Console\Command\BehatCommand->runFeatures(Object(Behat\Gherkin\Gherkin))
+#20 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(242): Behat\Behat\Console\Command\BehatCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(200): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\BehatApplication.php(68): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(106): Behat\Behat\Console\BehatApplication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\RenegateBrand\functional\vendor\behat\behat\bin\behat(32): Symfony\Component\Console\Application->run()
+#25 {main}
+]]></failure>
+    </testcase>
+    <testcase classname="As a registered user I want to log in to the website" name="User login with wrong password" time="0.058004">
+        <failure message="The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown" type="failed"><![CDATA[
+exception 'WebDriver\Exception\UnknownError' with message 'The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown' in D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\Exception.php:157
+Stack trace:
+#0 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\AbstractWebDriver.php(140): WebDriver\Exception::factory(13, 'The best matchi...')
+#1 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\WebDriver.php(76): WebDriver\AbstractWebDriver->curl('POST', '/session', Array, Array)
+#2 D:\RenegateBrand\functional\vendor\behat\mink-selenium2-driver\src\Behat\Mink\Driver\Selenium2Driver.php(257): WebDriver\WebDriver->session('firefor', Array)
+#3 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Session.php(62): Behat\Mink\Driver\Selenium2Driver->start()
+#4 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Mink.php(124): Behat\Mink\Session->start()
+#5 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(373): Behat\Mink\Mink->getSession()
+#6 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(785): FeatureContext->getSession()
+#7 [internal function]: FeatureContext->visit('customer_login')
+#8 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Definition\Annotation\Definition.php(155): call_user_func_array(Array, Array)
+#9 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(157): Behat\Behat\Definition\Annotation\Definition->run(Object(FeatureContext))
+#10 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(126): Behat\Behat\Tester\StepTester->executeStepDefinition(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Behat\Definition\Annotation\Given))
+#11 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(95): Behat\Behat\Tester\StepTester->executeStep(Object(Behat\Gherkin\Node\StepNode))
+#12 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\StepTester->visit(Object(Behat\Gherkin\Node\StepNode))
+#13 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(148): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\StepTester))
+#14 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(87): Behat\Behat\Tester\ScenarioTester->visitStep(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Gherkin\Node\ScenarioNode), Object(FeatureContext), Array, false)
+#15 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\ScenarioTester->visit(Object(Behat\Gherkin\Node\ScenarioNode))
+#16 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\FeatureTester.php(88): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\ScenarioTester))
+#17 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\FeatureTester->visit(Object(Behat\Gherkin\Node\FeatureNode))
+#18 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(150): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\FeatureTester))
+#19 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(128): Behat\Behat\Console\Command\BehatCommand->runFeatures(Object(Behat\Gherkin\Gherkin))
+#20 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(242): Behat\Behat\Console\Command\BehatCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(200): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\BehatApplication.php(68): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(106): Behat\Behat\Console\BehatApplication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\RenegateBrand\functional\vendor\behat\behat\bin\behat(32): Symfony\Component\Console\Application->run()
+#25 {main}
+]]></failure>
+    </testcase>
+    <testcase classname="As a registered user I want to log in to the website" name="User login with empty fields (form validation)" time="0.043000">
+        <failure message="The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown" type="failed"><![CDATA[
+exception 'WebDriver\Exception\UnknownError' with message 'The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown' in D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\Exception.php:157
+Stack trace:
+#0 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\AbstractWebDriver.php(140): WebDriver\Exception::factory(13, 'The best matchi...')
+#1 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\WebDriver.php(76): WebDriver\AbstractWebDriver->curl('POST', '/session', Array, Array)
+#2 D:\RenegateBrand\functional\vendor\behat\mink-selenium2-driver\src\Behat\Mink\Driver\Selenium2Driver.php(257): WebDriver\WebDriver->session('firefor', Array)
+#3 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Session.php(62): Behat\Mink\Driver\Selenium2Driver->start()
+#4 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Mink.php(124): Behat\Mink\Session->start()
+#5 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(373): Behat\Mink\Mink->getSession()
+#6 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(785): FeatureContext->getSession()
+#7 [internal function]: FeatureContext->visit('customer_login')
+#8 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Definition\Annotation\Definition.php(155): call_user_func_array(Array, Array)
+#9 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(157): Behat\Behat\Definition\Annotation\Definition->run(Object(FeatureContext))
+#10 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(126): Behat\Behat\Tester\StepTester->executeStepDefinition(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Behat\Definition\Annotation\Given))
+#11 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(95): Behat\Behat\Tester\StepTester->executeStep(Object(Behat\Gherkin\Node\StepNode))
+#12 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\StepTester->visit(Object(Behat\Gherkin\Node\StepNode))
+#13 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(148): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\StepTester))
+#14 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(87): Behat\Behat\Tester\ScenarioTester->visitStep(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Gherkin\Node\ScenarioNode), Object(FeatureContext), Array, false)
+#15 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\ScenarioTester->visit(Object(Behat\Gherkin\Node\ScenarioNode))
+#16 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\FeatureTester.php(88): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\ScenarioTester))
+#17 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\FeatureTester->visit(Object(Behat\Gherkin\Node\FeatureNode))
+#18 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(150): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\FeatureTester))
+#19 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(128): Behat\Behat\Console\Command\BehatCommand->runFeatures(Object(Behat\Gherkin\Gherkin))
+#20 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(242): Behat\Behat\Console\Command\BehatCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(200): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\BehatApplication.php(68): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(106): Behat\Behat\Console\BehatApplication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\RenegateBrand\functional\vendor\behat\behat\bin\behat(32): Symfony\Component\Console\Application->run()
+#25 {main}
+]]></failure>
+    </testcase>
+    <testcase classname="As a registered user I want to log in to the website" name="User logout and login as another user (cache validation)" time="0.106002">
+        <failure message="The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown" type="failed"><![CDATA[
+exception 'WebDriver\Exception\UnknownError' with message 'The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown' in D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\Exception.php:157
+Stack trace:
+#0 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\AbstractWebDriver.php(140): WebDriver\Exception::factory(13, 'The best matchi...')
+#1 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\WebDriver.php(76): WebDriver\AbstractWebDriver->curl('POST', '/session', Array, Array)
+#2 D:\RenegateBrand\functional\vendor\behat\mink-selenium2-driver\src\Behat\Mink\Driver\Selenium2Driver.php(257): WebDriver\WebDriver->session('firefor', Array)
+#3 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Session.php(62): Behat\Mink\Driver\Selenium2Driver->start()
+#4 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Mink.php(124): Behat\Mink\Session->start()
+#5 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(373): Behat\Mink\Mink->getSession()
+#6 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(785): FeatureContext->getSession()
+#7 D:\RenegateBrand\functional\features\bootstrap\FeatureContext.php(127): FeatureContext->visit('customer_login')
+#8 [internal function]: FeatureContext->iAmLoggedToFrontend('kkatekoss@gmail...', 'Kkate123')
+#9 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Definition\Annotation\Definition.php(155): call_user_func_array(Array, Array)
+#10 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(157): Behat\Behat\Definition\Annotation\Definition->run(Object(FeatureContext))
+#11 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(126): Behat\Behat\Tester\StepTester->executeStepDefinition(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Behat\Definition\Annotation\Given))
+#12 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(95): Behat\Behat\Tester\StepTester->executeStep(Object(Behat\Gherkin\Node\StepNode))
+#13 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\StepTester->visit(Object(Behat\Gherkin\Node\StepNode))
+#14 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(148): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\StepTester))
+#15 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(87): Behat\Behat\Tester\ScenarioTester->visitStep(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Gherkin\Node\ScenarioNode), Object(FeatureContext), Array, false)
+#16 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\ScenarioTester->visit(Object(Behat\Gherkin\Node\ScenarioNode))
+#17 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\FeatureTester.php(88): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\ScenarioTester))
+#18 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\FeatureTester->visit(Object(Behat\Gherkin\Node\FeatureNode))
+#19 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(150): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\FeatureTester))
+#20 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(128): Behat\Behat\Console\Command\BehatCommand->runFeatures(Object(Behat\Gherkin\Gherkin))
+#21 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(242): Behat\Behat\Console\Command\BehatCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(200): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\BehatApplication.php(68): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(106): Behat\Behat\Console\BehatApplication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\RenegateBrand\functional\vendor\behat\behat\bin\behat(32): Symfony\Component\Console\Application->run()
+#26 {main}
+]]></failure>
+    </testcase>
+    <testcase classname="As a registered user I want to log in to the website" name="User is redirected to the Registration form from Login page" time="0.037002">
+        <failure message="The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown" type="failed"><![CDATA[
+exception 'WebDriver\Exception\UnknownError' with message 'The best matching driver provider org.openqa.selenium.edge.EdgeDriver can't create a new driver instance for Capabilities [{deviceType=tablet, selenium-version=2.31.0, browserVersion=8, browser=firefox, name=Behat test, browserName=firefor, deviceOrientation=portrait, version=8, platform=ANY, max-duration=300}]
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'AlexKusakin', ip: '192.168.1.135', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_101'
+Driver info: driver.version: unknown' in D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\Exception.php:157
+Stack trace:
+#0 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\AbstractWebDriver.php(140): WebDriver\Exception::factory(13, 'The best matchi...')
+#1 D:\RenegateBrand\functional\vendor\instaclick\php-webdriver\lib\WebDriver\WebDriver.php(76): WebDriver\AbstractWebDriver->curl('POST', '/session', Array, Array)
+#2 D:\RenegateBrand\functional\vendor\behat\mink-selenium2-driver\src\Behat\Mink\Driver\Selenium2Driver.php(257): WebDriver\WebDriver->session('firefor', Array)
+#3 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Session.php(62): Behat\Mink\Driver\Selenium2Driver->start()
+#4 D:\RenegateBrand\functional\vendor\behat\mink\src\Behat\Mink\Mink.php(124): Behat\Mink\Session->start()
+#5 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(373): Behat\Mink\Mink->getSession()
+#6 D:\RenegateBrand\functional\vendor\irs\behat-uimap-extension\src\Irs\BehatUimapExtension\Context\UimapContext.php(785): FeatureContext->getSession()
+#7 [internal function]: FeatureContext->visit('customer_login')
+#8 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Definition\Annotation\Definition.php(155): call_user_func_array(Array, Array)
+#9 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(157): Behat\Behat\Definition\Annotation\Definition->run(Object(FeatureContext))
+#10 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(126): Behat\Behat\Tester\StepTester->executeStepDefinition(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Behat\Definition\Annotation\Given))
+#11 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\StepTester.php(95): Behat\Behat\Tester\StepTester->executeStep(Object(Behat\Gherkin\Node\StepNode))
+#12 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\StepTester->visit(Object(Behat\Gherkin\Node\StepNode))
+#13 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(148): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\StepTester))
+#14 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\ScenarioTester.php(87): Behat\Behat\Tester\ScenarioTester->visitStep(Object(Behat\Gherkin\Node\StepNode), Object(Behat\Gherkin\Node\ScenarioNode), Object(FeatureContext), Array, false)
+#15 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\ScenarioTester->visit(Object(Behat\Gherkin\Node\ScenarioNode))
+#16 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Tester\FeatureTester.php(88): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\ScenarioTester))
+#17 D:\RenegateBrand\functional\vendor\behat\gherkin\src\Behat\Gherkin\Node\AbstractNode.php(42): Behat\Behat\Tester\FeatureTester->visit(Object(Behat\Gherkin\Node\FeatureNode))
+#18 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(150): Behat\Gherkin\Node\AbstractNode->accept(Object(Behat\Behat\Tester\FeatureTester))
+#19 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\Command\BehatCommand.php(128): Behat\Behat\Console\Command\BehatCommand->runFeatures(Object(Behat\Gherkin\Gherkin))
+#20 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(242): Behat\Behat\Console\Command\BehatCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(200): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\RenegateBrand\functional\vendor\behat\behat\src\Behat\Behat\Console\BehatApplication.php(68): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\RenegateBrand\functional\vendor\symfony\console\Symfony\Component\Console\Application.php(106): Behat\Behat\Console\BehatApplication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\RenegateBrand\functional\vendor\behat\behat\bin\behat(32): Symfony\Component\Console\Application->run()
+#25 {main}
+]]></failure>
     </testcase>
 </testsuite>

@@ -3,7 +3,7 @@ Feature: As a user I want to be able to checkout products
 
   Background:
     Given I go to "product_page" with next parameters:
-      |productUrl|jethro-hat|
+      |productUrl|catalog/product/view/id/19937/s/adriana-hat/category/90/|
       And I believe I am on "product_page"
       And I select any color and size
       And I wait for AJAX
