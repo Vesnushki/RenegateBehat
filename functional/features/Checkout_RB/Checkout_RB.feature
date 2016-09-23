@@ -137,19 +137,14 @@ Feature: As a user I want to be able to checkout products
     Then I wait until I see "Pay with PayPal"
       Given I switch to the iframe
       When I fill PayPal login form
-      When I press "Log In"
+      Then I click on "//button[@id='btnLogin']"
       And I wait for 10 seconds
-#    When I fill PayPal login form
-#      And I wait for 10 seconds
-#      #And I fill in the following into fieldset "paypal_sandbox_login"
-#      And I press "button_login" in fieldset "paypal_sandbox_login"
-#    Then I wait until I see "Pay with"
-#      And I press "button_continue" in fieldset "paypal_sandbox_login"
-#    Then I wait until I see "Review Order"
-#      And I believe I am on "paypal_express_review"
-#      And I press "place_order" in fieldset "review_order_paypal"
-#      And I wait for AJAX
-#    Then I should see "Thank you for your order!"
+     Then I click on "//div[@id='button']"
+    Then I wait until I see "Review Order"
+      And I believe I am on "paypal_express_review"
+      And I press "place_order" in fieldset "review_order_paypal"
+      And I wait for AJAX
+    Then I should see "Thank you for your order!"
 
 
       @4
