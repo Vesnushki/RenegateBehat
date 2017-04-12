@@ -3,75 +3,37 @@ Feature: As a user I want to be able to checkout products
 
   Background:
     Given I go to "product_page" with next parameters:
-      |productUrl|catalog/product/view/id/19937/s/adriana-hat/category/90/|
-      And I believe I am on "product_page"
-      And I select any color and size
-      And I wait for AJAX
-      When I press "add_to_cart" in fieldset "product_info"
-      And I wait for AJAX
-      Then I should see "You added Jethro Hat to your shopping cart."
-    Given I go to "product_page" with next parameters:
-      |productUrl|mens/headwear/caps/fiddler-17298|
-      And I believe I am on "product_page"
-      And I select any color and size
-      And I wait for AJAX
-      When I press "add_to_cart" in fieldset "product_info"
-      And I wait for AJAX
-      Then I should see "You added Fiddler Cap to your shopping cart."
-    Given I go to "product_page" with next parameters:
-      |productUrl|mens/clothing/tops/howl-s-s-woven|
-      And I believe I am on "product_page"
-      And I select any color and size
-      And I wait for AJAX
-      When I press "add_to_cart" in fieldset "product_info"
-      And I wait for AJAX
-      Then I should see "You added Fiddler Cap to your shopping cart."
-
-
+      |productUrl|men-s/clothing/jackets/claxton-jacket|
+    And I believe I am on "product_page"
+    And I select any color and size
+#      And I wait for 5 seconds
+#    And I click on "//div[@option-id='2056']"
+    When I press "add_to_cart" in fieldset "product_info"
+    And I wait for AJAX
+    And I wait for 5 seconds
 
     @3
-    Scenario: Sign in on checkout and PayPal payment method 
-    When I go to "checkout"
-      And I believe I am on "checkout"
+    Scenario: Sign in on checkout and PayPal payment method
+    When I go to "shopping_cart"
+      And I believe I am on "shopping_cart"
       And I wait for AJAX
-    Then I wait until I see "Next"
-      And I fill in the following into fieldset "shipping_information":
-    |shipping_email           |kkatekoss@gmail.com|
-     And I wait for AJAX
-   Then I wait until I see "Password"
-      And I fill in the following into fieldset "shipping_information":
-    |shipping_password        |Kkate123|
-    And I press "shipping_login" in fieldset "shipping_information"
-     And I wait for AJAX
-     And I set "radio_button_for_login_user" in fieldset "shipping_method"
-     And I wait for AJAX
-     And I press "shipping_next_button" in fieldset "shipping_method"
-      And I wait for AJAX
-      And I believe I am on "checkout_payment"
-      Then I wait until I see "Apply Gift Card"
-      #And I fill in the following into fieldset "payment_method":
-      #|payment_email           |kkatekoss@gmail.com|
-      #And I wait for AJAX
-     # Then I wait until I see "Password"
-     # And I fill in the following into fieldset "payment_method":
-      #|payment_password        |Kkate123|
-     # And I press "payment_login" in fieldset "payment_method"
-      And I set "check_payment" in fieldset "payment_method" with following parameters:
-      | paymentID | paypal_express |
-      And I wait for AJAX
-      And I press "continue_to_paypal" in fieldset "payment_method"
+      And I click on "//input[@title='Checkout with PayPal']"
       And I wait for AJAX
     Then I wait until I see "Pay with PayPal"
-      And I fill in the following into fieldset "paypal_sandbox_login"
-      | login_email    | slipknot4@ua.fm |
-      | login_password | 12345678        |
-      And I press "button_login" in fieldset "paypal_sandbox_login"
-    Then I wait until I see "Pay with"
-      And I press "button_continue" in fieldset "paypal_sandbox_login"
+      When I choose to pay with PayPal
+    Then I wait until I see "PayPal is the safer, easier way to pay"
+      And I click on "//input[@id='confirmButtonTop']"
+#      Then I wait until I see "Review your information"
+#      And I click on "//input[@id='continue']"
     Then I wait until I see "Review Order"
+      And I wait for AJAX
+      And I believe I am on "paypal_express_review"
+    Then I click on "//div[contains(@class, 'box-order-shipping-method')]"
+      And I wait for AJAX
+    When I select "flatrate_flatrate" from "shipping_method" in fieldset "review_order_paypal"
+      And I wait for AJAX
+      And I wait for 5 seconds
       And I believe I am on "paypal_express_review"
       And I press "place_order" in fieldset "review_order_paypal"
-      And I wait for AJAX
+    Then I wait until I see "Thank you for your order!"
     Then I should see "Thank you for your order!"
-
-
