@@ -9,19 +9,18 @@ default:
     #  database:
     #    schema: tgc_behat2
     Irs\BehatUimapExtension\Extension:
-      uimaps: 
+      uimaps:
         "admin/": uimaps/admin
         "/": uimaps/frontend
     Irs\BehatPopupExtension\Extension: ~
     Behat\MinkExtension\Extension:
-      base_url: https://dev.rbgsystems.com/
-      selenium2:
-          wd_host: "http://127.0.0.1:4444/wd/hub"
+      base_url: https://www.brixton.com/brx_en_au
+      selenium2: ~
       default_session: selenium2
-      browser_name: chrome
+      browser_name: firefox
       #selenium2:
       #        capabilities: { "browser": "firefox", "version": "45.0.2"}
   formatter:
     name:                   pretty,junit,html
     parameters:
-      output_path:          null,junit,behat_report.html
+      output_path:          null,junit,behat_report.htmls
