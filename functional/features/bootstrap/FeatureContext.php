@@ -50,6 +50,7 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
         $this->fillField('password', 'passwd4admin');
         $this->findField('login', 'button', 'log_in')->press();
         $this->assertPageContainsText('Dashboard');
+
     }
 
     /**
@@ -187,7 +188,7 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
     }
 
     /**
-     * @Given /^I fill in test CC info$/
+        * @Given /^I fill in test CC info$/
      */
     public function iFillInTestCcInfo()
     {
@@ -321,5 +322,78 @@ class FeatureContext extends BehatContext implements MinkAwareInterface
         $find_iframe = $this->getSession()->getPage()->find('css','#injectedUnifiedLogin iframe');
         $iframeName = $find_iframe->getAttribute('name');
         $this->getSession()->switchToIFrame($iframeName);
+    }
+
+
+    /**
+     * @Then /^I choose first available product$/
+     */
+    public function iChooseFirstAvailableProduct()
+    {
+        //получаем список всех продуктов на странице
+        $product_list = $this->getSession()->getPage()
+            ->find('css','.product-items')
+            ->findAll('css','.product-item');
+
+        //флаг для определения того был ли на странице недоступный продукт по умаолчанию, стоит что продукта на складе не было обнаружено
+        $productOutOfStock = true;
+
+        //пробегаемся по всем продуктам и по каждому продукту проверяем доступные цвета
+        foreach($product_list as $product) {
+            //по конкретному продукту проверяем цвета (доступны ли они на складе)
+            $colors_in_stock = $product->find('css','.swatch-attribute-options')->findAll('css','.in-stock');
+
+            //если есть хоть один цвет доступный на складе
+            if(count($colors_in_stock)>0) {
+                //флаг проставляем в false то есть продукт был обнаружен на складе
+                $productOutOfStock = false;
+
+                //получаем ссылку на страницу продукта
+                $productPage = $product->find('css','.product-item-photo');
+
+                //переходим на страницу продукта
+                $productPage->click();
+
+                break;
+            }
+        }
+
+        //если продукт не найден бросаем исключение
+        if($productOutOfStock)
+            throw new Exception(" Product on stock not found");
+    }
+
+
+    /**
+     * @Then /^I add to basket product with available size$/
+     */
+    public function iAddToBucketProductWithAvailableSize()
+    {
+        //инфа по продукту
+        $session = $this->getSession();
+        $color_options = $session->getPage()->find('css','.color');
+        $color_list = $color_options->findAll("css",".swatch-option");
+
+        //переребираем все цвета и по каждому цвету проверяем доступность размера
+        foreach ($color_list as $color){
+            //жмем на первый цвет
+            $color->click();
+
+            //ожидаем какоето время
+            $session -> wait(5000);
+
+            //получили список всех размеров
+            $all_size = $this->getSession()->getPage()->find('css','.size');
+
+            //получили только те которые есть на складе
+            $size_in_stock = $all_size->findAll("css",".in-stock");
+
+            //получаем первый доступный размер и выбираем его
+            foreach ($size_in_stock as $size){
+                $size->click();
+                $session -> wait(5000);
+                break;
+            }
+        }
     }
 }
